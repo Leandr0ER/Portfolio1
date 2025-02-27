@@ -90,6 +90,6 @@ form label{
     grid-template-columns: subgrid;
 }
 
-label, button{
+label, #button{
     grid-column: 1 / -1;
 }
