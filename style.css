@@ -21,8 +21,14 @@ ul.myUL {
 /* ctrl + k + c (comment)*/
 /* ctrl + k + u */
 
+nav ul,
+nav il {
+	display: contents; /* step 2.1 */
+}
+
 nav {
     display: flex;
+    margin-bottom: 1em;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: oklch(80% 3% 200) ;
@@ -46,43 +52,44 @@ nav a {
 body { background-color: oklch(from var(--grey) 95% 5% h); } /*a lighter grey*/
 .container {  background-color: var(--white);}
 
-nav .current{
+nav a.current{
     border-bottom-width: 0.4em;
     border-bottom-style: solid; 
     border-bottom-color: var(--grey) ;
     padding: 0.1em;
+    font-weight: bold;
 }
 
 nav a:hover{
-  border-bottom-width: 0.4em;
-  border-bottom-style: solid; 
-  border-bottom-color: var(--color-accent) ;
-  padding: 0.1em;
-  background-color: var(--color-accent-bg);
+    border-bottom-width: 0.4em;
+    border-bottom-style: solid; 
+    border-bottom-color: var(--color-accent) ;
+    padding: 0.1em;
+    background-color: var(--color-accent-bg);
 }
 
 /* input,textarea,button {
     font: inherit;
-}
+} */
 
 label, input, textarea, button {
     display: block;
 }
 
 input, textarea, button {
+    font: inherit;
     width: 100%;
     box-sizing: border-box;
 }
 
 label {
      margin-block: 1rem;
-} */
+}
 
 form {
     display: grid;
     grid-template-columns: auto 1fr; 
     gap: 1em;
-
 }
 
 form label{
@@ -90,6 +97,39 @@ form label{
     grid-template-columns: subgrid;
 }
 
-label, #button{
+#button, label{
     grid-column: 1 / -1;
 }
+
+img{
+	max-width: 100%; /*step 4.2*/
+}
+
+/* Actualizar lab2 */
+.projects {
+    display:grid;
+    grid-template-columns : repeat(auto-fill, minmax(15em, 1fr));
+    min-width: 15em;
+    max-width: 1fr;
+}
+
+article{
+    margin: 10px;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}
+
+article h2{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+/* h2{
+    line-height: 1.1;
+    text-wrap: balance;
+} */

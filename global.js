@@ -21,9 +21,9 @@ if (currentLink) { // or if (currentLink !== undefined)
 
 let pages = [
     {url: "", title: "Home"},
-    {url: "contact/", title: "Contact"},
     {url: "projects/", title: "Projects"},
-    {url: "resume/", title: "Resume"},    
+    {url: "resume/", title: "Resume"},  
+    {url: "contact/", title: "Contact"},      
     //{url: "https://github.com/Mike-Kowalsky", title: "Projects"}
     // add the rest of your pages here
 ];
@@ -40,7 +40,14 @@ for (let p of pages) {
     if (!ARE_WE_HOME && !url.startsWith("http")) {
         url = "../" + url;
     }
-    nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
+    // nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
+
+    let a = document.createElement("a");
+    a.href = url;
+    a.textContent = title;
+    nav.append(a);
+
+    a.classList.toggle("current", a.host === location.host && a.pathname === location.pathname);
 }
 
 
