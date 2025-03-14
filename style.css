@@ -1,8 +1,17 @@
+:root {
+    --grey: oklch(80% 3% 200);
+    --white: #ffffff;
+    --color-accent: oklch(65% 50% 0); /* Example: A vibrant yellow-orange */
+    --color-accent-bg:oklch(84.5% 0.1771 0 / 48.23%); /* define a new color variable*/
+    --color-header-bg: oklch(72.5% 0.0715 202 / 50%);
+}
+
+
 body {
     /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
      */
-    font: 100%/1.5 system-ui;
+    font: 100% /1.5 system-ui;
     max-width: 100ch;
     margin-inline: auto;
     padding: 1cm;
@@ -42,12 +51,7 @@ nav a {
     padding: 0.5em;
 }
 
-:root {
-  --grey: oklch(80% 3% 200);
-  --white: #ffffff;
-  --color-accent: oklch(65% 50% 0); /* Example: A vibrant yellow-orange */
-  --color-accent-bg:oklch(84.5% 0.1771 0 / 48.23%) /* define a new color variable*/
-}
+
 
 body { background-color: oklch(from var(--grey) 95% 5% h); } /*a lighter grey*/
 .container {  background-color: var(--white);}
@@ -90,6 +94,7 @@ form {
     display: grid;
     grid-template-columns: auto 1fr; 
     gap: 1em;
+    margin-top: 0em;
 }
 
 form label{
@@ -102,7 +107,7 @@ form label{
 }
 
 img{
-	max-width: 100%; /*step 4.2*/
+	max-width: 100%; 
 }
 
 /* Actualizar lab2 */
@@ -124,6 +129,10 @@ article h2{
     margin: 0;
 }
 
+h1 {
+	font-size: 200%;
+}
+
 h1, h2, h3, h4, h5, h6{
     line-height: 1.1;
     text-wrap: balance;
@@ -133,3 +142,15 @@ h1, h2, h3, h4, h5, h6{
     line-height: 1.1;
     text-wrap: balance;
 } */
+
+/* Actualizar resume lab2 */
+.resume{
+	display: grid; 
+	grid-template-columns: repeat(2, 1fr); 
+	min-width: 25em; 
+}
+header{
+	background-color: var(--color-header-bg); 
+	font-weight: bold; 
+	text-transform: uppercase; 
+} 
